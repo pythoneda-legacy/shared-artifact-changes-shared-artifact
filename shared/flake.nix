@@ -71,7 +71,7 @@
 
             checkInputs = with python.pkgs; [ ];
 
-            #            pythonImportsCheck = [ "pythoneda/shared/artifact_changes/shared" ];
+            pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
               cp -r ${src} .
