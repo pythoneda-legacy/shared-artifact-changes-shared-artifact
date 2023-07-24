@@ -20,7 +20,6 @@ rec {
       echo;
       echo " Thank you for using pythoneda-shared-artifact-changes/shared, PythonEDA in general, and for your appreciation of free software.";
       echo;
-      export FIX_PYTHONPATH="$PYTHONEDA/dist/scripts/fix_pythonpath.py";
       export PYTHONPATH="$(python $PYTHONEDA/dist/scripts/fix_pythonpath.py)";
     '';
   devShell-for = { nixpkgsRelease, package, pkgs, python

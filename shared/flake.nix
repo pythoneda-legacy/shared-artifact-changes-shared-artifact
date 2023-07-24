@@ -26,7 +26,7 @@
           [ "rydnr <github@acm-sl.org>" ];
         nixpkgsRelease = "nixos-23.05";
         shared = import ./nix/shared.nix;
-        pythonpackage = "pythoneda.shared.artifact_changes.shared";
+        pythonpackage = "pythoneda.shared.artifact_changes";
         pythoneda-shared-artifact-changes-shared-for =
           { python, pythoneda-shared-pythoneda-domain, version }:
           let
@@ -58,7 +58,7 @@
               owner = "pythoneda-shared-artifact-changes";
               repo = "shared";
               rev = version;
-              sha256 = "sha256-Gl3U2bRbglBeX+aqV8rCvxAdCyE9YpXPVNplDoMPWHw=";
+              sha256 = "sha256-n9JFl9d5QHMSDGgioU6lo5w9tprspYn98Rsh4jpQqug=";
             };
 
             format = "pyproject";
