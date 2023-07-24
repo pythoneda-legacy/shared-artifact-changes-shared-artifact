@@ -69,8 +69,6 @@
               unidiff
             ];
 
-            checkInputs = with python.pkgs; [ ];
-
             pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
@@ -79,13 +77,6 @@
               chmod -R +w $sourceRoot
               cat ${pyprojectTemplate}
               cp ${pyprojectTemplate} $sourceRoot/pyproject.toml
-            '';
-
-            preBuild = ''
-              python -m venv .env
-              source .env/bin/activate
-              pip install ${pythoneda-shared-pythoneda-domain}/dist/pythoneda_shared_pythoneda_domain-${pythoneda-shared-pythoneda-domain.version}-py${pythonMajorVersion}-none-any.whl
-              rm -rf .env
             '';
 
             postInstall = ''
