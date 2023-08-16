@@ -42,8 +42,8 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "shared";
-        version = "0.0.1a3";
-        sha256 = "sha256-n9JFl9d5QHMSDGgioU6lo5w9tprspYn98Rsh4jpQqug=";
+        version = "0.0.1a4";
+        sha256 = "sha256-XG94m7OVTlUcd4F9Imh3vLeiw5hR4ml6GTMgEzjQAag=";
         pname = "${org}-${repo}";
         pkgs = import nixos { inherit system; };
         description =
