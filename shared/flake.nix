@@ -29,7 +29,7 @@
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a41?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a42?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -131,7 +131,7 @@
         devShells = rec {
           default = pythoneda-shared-artifact-changes-shared-default;
           pythoneda-shared-artifact-changes-shared-default =
-            pythoneda-shared-artifact-changes-shared-python310;
+            pythoneda-shared-artifact-changes-shared-python311;
           pythoneda-shared-artifact-changes-shared-python38 =
             shared.devShell-for {
               package =
@@ -165,11 +165,22 @@
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python310;
               inherit archRole layer nixpkgsRelease org pkgs repo space;
             };
+          pythoneda-shared-artifact-changes-shared-python311 =
+            shared.devShell-for {
+              package =
+                packages.pythoneda-shared-artifact-changes-shared-python311;
+              python = pkgs.python311;
+              pythoneda-shared-pythoneda-banner =
+                pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python311;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python311;
+              inherit archRole layer nixpkgsRelease org pkgs repo space;
+            };
         };
         packages = rec {
           default = pythoneda-shared-artifact-changes-shared-default;
           pythoneda-shared-artifact-changes-shared-default =
-            pythoneda-shared-artifact-changes-shared-python310;
+            pythoneda-shared-artifact-changes-shared-python311;
           pythoneda-shared-artifact-changes-shared-python38 =
             pythoneda-shared-artifact-changes-shared-for {
               python = pkgs.python38;
@@ -187,6 +198,12 @@
               python = pkgs.python310;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python310;
+            };
+          pythoneda-shared-artifact-changes-shared-python311 =
+            pythoneda-shared-artifact-changes-shared-for {
+              python = pkgs.python311;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python311;
             };
         };
       });
