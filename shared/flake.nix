@@ -23,13 +23,13 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a16";
+      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a17";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a42?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a43?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -42,8 +42,8 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "shared";
-        version = "0.0.1a8";
-        sha256 = "sha256-YpsNP1xMmO87ag+zvdrsywWIJ6/NPKb/mLRyLw55GhU=";
+        version = "0.0.1a9";
+        sha256 = "sha256-qTYLxmYU+kDlhNKvwmnhfNyvGre1OiRi6xTS6bf8G7s=";
         pname = "${org}-${repo}";
         pkgs = import nixos { inherit system; };
         description =
@@ -143,8 +143,30 @@
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python38;
               inherit archRole layer nixpkgsRelease org pkgs repo space;
             };
+          pythoneda-shared-artifact-changes-shared-raw-python38 =
+            shared.raw-devShell-for {
+              package =
+                packages.pythoneda-shared-artifact-changes-shared-python38;
+              python = pkgs.python38;
+              pythoneda-shared-pythoneda-banner =
+                pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python38;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python38;
+              inherit archRole layer nixpkgsRelease org pkgs repo space;
+            };
           pythoneda-shared-artifact-changes-shared-python39 =
             shared.devShell-for {
+              package =
+                packages.pythoneda-shared-artifact-changes-shared-python39;
+              python = pkgs.python39;
+              pythoneda-shared-pythoneda-banner =
+                pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python39;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python39;
+              inherit archRole layer nixpkgsRelease org pkgs repo space;
+            };
+          pythoneda-shared-artifact-changes-shared-raw-python39 =
+            shared.raw-devShell-for {
               package =
                 packages.pythoneda-shared-artifact-changes-shared-python39;
               python = pkgs.python39;
@@ -165,8 +187,30 @@
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python310;
               inherit archRole layer nixpkgsRelease org pkgs repo space;
             };
+          pythoneda-shared-artifact-changes-shared-raw-python310 =
+            shared.raw-devShell-for {
+              package =
+                packages.pythoneda-shared-artifact-changes-shared-python310;
+              python = pkgs.python310;
+              pythoneda-shared-pythoneda-banner =
+                pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python310;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python310;
+              inherit archRole layer nixpkgsRelease org pkgs repo space;
+            };
           pythoneda-shared-artifact-changes-shared-python311 =
             shared.devShell-for {
+              package =
+                packages.pythoneda-shared-artifact-changes-shared-python311;
+              python = pkgs.python311;
+              pythoneda-shared-pythoneda-banner =
+                pythoneda-shared-pythoneda-banner.packages.${system}.pythoneda-shared-pythoneda-banner-python311;
+              pythoneda-shared-pythoneda-domain =
+                pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-python311;
+              inherit archRole layer nixpkgsRelease org pkgs repo space;
+            };
+          pythoneda-shared-artifact-changes-shared-raw-python311 =
+            shared.raw-devShell-for {
               package =
                 packages.pythoneda-shared-artifact-changes-shared-python311;
               python = pkgs.python311;
