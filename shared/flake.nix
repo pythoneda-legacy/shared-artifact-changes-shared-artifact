@@ -23,13 +23,13 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.1a17";
+      url = "github:pythoneda-shared-pythoneda/banner/0.0.2";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.1a43?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.2?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -42,7 +42,7 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "shared";
-        version = "0.0.1a9";
+        version = "0.0.2";
         sha256 = "sha256-qTYLxmYU+kDlhNKvwmnhfNyvGre1OiRi6xTS6bf8G7s=";
         pname = "${org}-${repo}";
         pkgs = import nixos { inherit system; };
